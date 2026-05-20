@@ -1,4 +1,4 @@
-/* 1. BRAND VARIABLES - The "Royal" Palette */
+  /* 1. BRAND VARIABLES */
   :root {
       --gold: linear-gradient(45deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
       --solid-gold: #D4AF37;
@@ -10,10 +10,17 @@
 
  /* 2. BASE RESET */
  * { margin: 0; padding: 0; box-sizing: border-box; }
- html { scroll-behavior: smooth; }
- body { font-family: 'Poppins', sans-serif; background: var(--cream); color: #333; line-height: 1.8; overflow-x: hidden; }
+ html { scroll-behavior: smooth; overflow-x: hidden; }
+ body { 
+     font-family: 'Poppins', sans-serif; 
+     background: var(--cream); 
+     color: #333; 
+     line-height: 1.8; 
+     overflow-x: hidden; /* Prevents the side-sliding on mobile */
+     width: 100%;
+ }
 
- /* 3. NAVIGATION (The Logo & Header Fix) */
+ /* 3. NAVIGATION */
  .navbar { 
      display: flex; justify-content: space-between; align-items: center; 
      padding: 20px 5%; background: var(--black); position: fixed; 
@@ -24,7 +31,6 @@
      font-weight: bold; letter-spacing: 1px; white-space: nowrap; flex-shrink: 0;
  }
  .gold { color: var(--solid-gold); }
-
  .nav-links { display: flex; list-style: none; align-items: center; }
  .nav-links li { margin-left: 25px; }
  .nav-links a { 
@@ -32,7 +38,6 @@
      text-transform: uppercase; transition: var(--transition); letter-spacing: 1px; 
  }
  .nav-links a:hover { color: var(--solid-gold); }
-
  .nav-btn { 
      background: var(--gold); color: #000 !important; padding: 10px 20px; 
      font-weight: 700; border-radius: 2px; transition: var(--transition);
@@ -45,7 +50,7 @@
      display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white);
  }
  .location-tag { color: var(--solid-gold); letter-spacing: 5px; font-size: 14px; margin-bottom: 15px; }
- .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(35px, 7vw, 65px); line-height: 1.1; margin-bottom: 25px; }
+ .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(30px, 7vw, 65px); line-height: 1.1; margin-bottom: 25px; }
  .italic { font-style: italic; font-weight: 400; }
  .royal-seal { border: 1px solid rgba(212,175,55,0.4); padding: 20px; margin-bottom: 30px; }
  .opening-tag { font-weight: bold; letter-spacing: 2px; color: var(--solid-gold); border-bottom: 2px solid var(--solid-gold); display: inline-block; padding-bottom: 5px; }
@@ -54,12 +59,8 @@
  .prestige-section { padding: 100px 10%; text-align: center; background: var(--white); }
  .section-title { font-family: 'Playfair Display', serif; font-size: 38px; margin-bottom: 20px; letter-spacing: 2px; text-transform: uppercase; }
  .intro-text { font-size: 18px; color: #666; max-width: 800px; margin: 0 auto 60px; font-weight: 300; }
-
  .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
- .feature-card { 
-     padding: 40px; border: 1px solid #f0f0f0; transition: var(--transition); 
-     background: var(--cream); opacity: 0; animation: fadeInUp 1s forwards;
- }
+ .feature-card { padding: 40px; border: 1px solid #f0f0f0; transition: var(--transition); background: var(--cream); opacity: 0; animation: fadeInUp 1s forwards; }
  .feature-card:hover { transform: translateY(-10px); border-color: var(--solid-gold); box-shadow: 0 15px 35px rgba(0,0,0,0.05); }
  .feature-card h3 { color: var(--solid-gold); margin-bottom: 15px; font-size: 16px; letter-spacing: 2px; }
 
@@ -72,184 +73,71 @@
      to { opacity: 1; transform: translateY(0); }
  }
 
-  /* 8. SUITES PAGE STYLING */
- .page-header { 
-     padding: 150px 0 80px; background: var(--black); text-align: center; color: white; 
- }
- .room-card-wide { 
-     display: flex; background: white; margin-bottom: 50px; border: 1px solid #eee;
-     box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s;
- }
- .room-image-placeholder { 
-     flex: 1; background: #e0e0e0; min-height: 300px; 
-     display: flex; align-items: center; justify-content: center; color: #888;
- }
+ /* 8. SUITES & EVENTS STYLING */
+ .page-header { padding: 150px 0 80px; background: var(--black); text-align: center; color: white; }
+ .room-card-wide { display: flex; background: white; margin-bottom: 50px; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s; }
+ .room-visual-box { flex: 1; background: #1a1a1a; display: flex; align-items: center; justify-content: center; min-height: 350px; position: relative; overflow: hidden; }
+ .visual-overlay { text-align: center; border: 1px solid rgba(212, 175, 55, 0.3); padding: 40px; margin: 20px; }
+ .visual-overlay span { color: var(--solid-gold); font-family: 'Playfair Display', serif; letter-spacing: 5px; display: block; margin-bottom: 10px; }
+ .visual-overlay p { color: #666; font-size: 12px; text-transform: uppercase; }
  .room-details { flex: 1; padding: 50px; text-align: left; }
- .gold-label { color: var(--solid-gold); font-size: 12px; letter-spacing: 3px; text-transform: uppercase; font-weight: bold; }
- .amenities { list-style: none; margin: 20px 0; display: flex; gap: 15px; font-size: 13px; color: #777; }
+ .gold-label { color: var(--solid-gold); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; font-weight: bold; }
+ .amenities { list-style: none; margin: 20px 0; display: flex; gap: 15px; font-size: 13px; color: #777; flex-wrap: wrap; }
  .room-link { color: var(--black); font-weight: bold; text-decoration: none; border-bottom: 2px solid var(--solid-gold); padding-bottom: 5px; }
 
- /* 9. Responsive for Suites */
+ /* 9. RESERVATION FORM */
+ .reserve-container { padding: 150px 10% 100px; display: flex; justify-content: center; background-color: var(--cream); }
+ .form-card { background: var(--white); padding: 60px; width: 100%; max-width: 900px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); border-top: 6px solid var(--solid-gold); text-align: center; }
+ .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+ .form-group { margin-bottom: 25px; text-align: left; }
+ .form-group label { display: block; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #999; margin-bottom: 10px; }
+ .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 15px; border: 1px solid #e0e0e0; background: #fcfcfc; font-family: 'Poppins', sans-serif; font-size: 14px; transition: var(--transition); }
+ .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--solid-gold); background: #fff; outline: none; }
+ .submit-btn { width: 100%; background: var(--gold); border: none; padding: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: var(--transition); margin-top: 20px; }
+ .submit-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4); }
+ .checkbox-group { display: flex; align-items: center; gap: 12px; margin: 20px 0; text-align: left; }
+ .inline-label { font-size: 13px !important; text-transform: none !important; color: #666 !important; letter-spacing: 0 !important; }
+
+ /* 10. MODAL STYLING */
+ .modal { display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(5px); }
+ .modal-content { background: #ffffff; margin: 8% auto; padding: 40px; width: 85%; max-width: 600px; border-top: 5px solid var(--solid-gold); position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+
+ /* ----------------------------------------- */
+ /* 11. MASTER MOBILE RESPONSIVE FIXES       */
+ /* ----------------------------------------- */
  @media (max-width: 768px) {
+     /* Navigation Adjustment */
+     .navbar { padding: 15px 5%; }
+     .logo { font-size: 16px; }
+     .nav-links { display: none; } /* On very small screens, menu items hide to give space to logo */
+
+     /* Fix the cutting-off on Suites & Events */
      .room-card-wide { flex-direction: column; }
-     .room-details { padding: 30px; }
- }
+     .room-visual-box { min-height: 250px; width: 100%; }
+     .room-details { padding: 30px 20px; width: 100%; }
+     .amenities { gap: 10px; }
 
-   /* 10. LUXURY PLACEHOLDER STYLING */
-  .room-visual-box { 
-      flex: 1; 
-      background: #1a1a1a; /* Dark charcoal background */
-      display: flex; 
-      align-items: center; 
-     justify-content: center; 
-     min-height: 350px;
-     position: relative;
-     overflow: hidden;
- }
+     /* Fix the cutting-off on Reservation Form */
+     .reserve-container { padding: 120px 5% 60px; }
+     .form-card { padding: 30px 20px; }
+     .form-row { grid-template-columns: 1fr; gap: 0; }
 
- .visual-overlay { 
-     text-align: center; 
-     border: 1px solid rgba(212, 175, 55, 0.3); 
-     padding: 40px;
-     margin: 20px;
- }
+     /* Typography adjustments for Mobile */
+     .section-title { font-size: 28px; }
+     .hero h1 { font-size: 32px; }
+ 
+       /* Fix Concierge Page */
+    .concierge-services { padding: 50px 5% !important; }
+    .service-card { 
+        padding: 30px !important; 
+        margin-bottom: 20px; 
+    }
 
- .visual-overlay span { 
-     color: var(--solid-gold); 
-     font-family: 'Playfair Display', serif; 
-     letter-spacing: 5px; 
-     display: block; 
-     margin-bottom: 10px; 
- }
-
- .visual-overlay p { 
-     color: #666; 
-     font-size: 12px; 
-     text-transform: uppercase; 
- }
-
-  /* 11. RESERVATION PAGE STYLES  */
- .reserve-container { 
-     padding: 150px 10% 100px; 
-     display: flex; 
-     justify-content: center; 
-     background-color: var(--cream); 
- }
-
- .form-card { 
-     background: var(--white); 
-     padding: 60px; 
-     width: 100%; 
-     max-width: 900px; 
-     box-shadow: 0 30px 60px rgba(0,0,0,0.1); 
-     border-top: 6px solid var(--solid-gold); 
-     text-align: center;
- }
-
- .form-row { 
-     display: grid; 
-     grid-template-columns: 1fr 1fr; 
-     gap: 25px; 
- }
-
- .form-group { 
-     margin-bottom: 25px; 
-     text-align: left; 
- }
-
- .form-group label { 
-     display: block; 
-     font-size: 11px; 
-     font-weight: 600; 
-     text-transform: uppercase; 
-     letter-spacing: 2px; 
-     color: #999; 
-     margin-bottom: 10px; 
- }
-
- .form-group input, 
- .form-group select, 
- .form-group textarea { 
-     width: 100%; 
-     padding: 15px; 
-     border: 1px solid #e0e0e0; 
-     background: #fcfcfc;
-     font-family: 'Poppins', sans-serif; 
-     font-size: 14px;
-     transition: var(--transition); 
- }
-
- .form-group input:focus, 
- .form-group select:focus, 
- .form-group textarea:focus { 
-     border-color: var(--solid-gold); 
-     background: #fff;
-     outline: none; 
- }
-
- .submit-btn { 
-     width: 100%; 
-     background: var(--gold); 
-     border: none; 
-     padding: 20px; 
-     font-weight: 700; 
-     text-transform: uppercase; 
-     letter-spacing: 2px;
-     cursor: pointer; 
-     transition: var(--transition); 
-     margin-top: 20px;
- }
-
- .submit-btn:hover { 
-     transform: translateY(-3px);
-     box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4); 
- }
-
- /* 12. Mobile Adjustment for Form */
- @media (max-width: 650px) {
-     .form-row {
-         grid-template-columns: 1fr; 
-     }
-     .form-card {
-        padding: 30px 20px; }
- }
-
-  /* 13. NEW RESERVATIONS EXTRA */
- .checkbox-group {
-     display: flex;
-     align-items: center;
-     gap: 12px;
-     margin: 20px 0;
-     text-align: left;
- }
-
- .inline-label {
-     font-size: 13px !important;
-     text-transform: none !important;
-     color: #666 !important;
-     letter-spacing: 0 !important;
- }
-
- /* 14. MODAL STYLING  */
- .modal {
-     display: none; 
-     position: fixed;
-     z-index: 2000;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     background: rgba(0, 0, 0, 0.85);
-     backdrop-filter: blur(5px);
- }
-
- .modal-content {
-     background: #ffffff;
-     margin: 8% auto;
-     padding: 40px;
-     width: 85%;
-     max-width: 600px;
-     border-top: 5px solid var(--solid-gold);
-     position: relative;
-     box-shadow: 0 20px 50px rgba(0,0,0,0.3);
- }
+    /* Fix Thank You Page */
+    .thanks-container { 
+        padding: 120px 5% 50px !important; 
+        height: auto !important; 
+        min-height: 100vh;
+    }
+    .thanks-container h1 { font-size: 30px !important; }
+}
