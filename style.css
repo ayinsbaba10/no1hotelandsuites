@@ -102,42 +102,91 @@
  .modal { display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(5px); }
  .modal-content { background: #ffffff; margin: 8% auto; padding: 40px; width: 85%; max-width: 600px; border-top: 5px solid var(--solid-gold); position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
 
- /* ----------------------------------------- */
- /* 11. MASTER MOBILE RESPONSIVE FIXES       */
+  /* ----------------------------------------- */
+ /* 11. MASTER MOBILE & GLOBAL FIX (ALL PAGES) */
  /* ----------------------------------------- */
  @media (max-width: 768px) {
-     /* Navigation Adjustment */
-     .navbar { padding: 15px 5%; }
-     .logo { font-size: 16px; }
-     .nav-links { display: none; } /* On very small screens, menu items hide to give space to logo */
-
-     /* Fix the cutting-off on Suites & Events */
-     .room-card-wide { flex-direction: column; }
-     .room-visual-box { min-height: 250px; width: 100%; }
-     .room-details { padding: 30px 20px; width: 100%; }
-     .amenities { gap: 10px; }
-
-     /* Fix the cutting-off on Reservation Form */
-     .reserve-container { padding: 120px 5% 60px; }
-     .form-card { padding: 30px 20px; }
-     .form-row { grid-template-columns: 1fr; gap: 0; }
-
-     /* Typography adjustments for Mobile */
-     .section-title { font-size: 28px; }
-     .hero h1 { font-size: 32px; }
- 
-       /* Fix Concierge Page */
-    .concierge-services { padding: 50px 5% !important; }
-    .service-card { 
-        padding: 30px !important; 
-        margin-bottom: 20px; 
+    
+    /* 1. FIX NAVIGATION: Show everything on phones */
+    .navbar {
+        flex-direction: column !important;
+        padding: 10px 0 !important;
+        height: auto !important;
+        position: relative !important; /* Changed from fixed to prevent content overlapping */
+        width: 100% !important;
     }
 
-    /* Fix Thank You Page */
-    .thanks-container { 
-        padding: 120px 5% 50px !important; 
-        height: auto !important; 
-        min-height: 100vh;
+    .logo {
+        font-size: 15px !important;
+        margin-bottom: 8px !important;
+        text-align: center;
+        width: 100%;
     }
-    .thanks-container h1 { font-size: 30px !important; }
+
+    /* FORCES LINKS TO SHOW HORIZONTALLY SIDE-BY-SIDE */
+    .nav-links {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 15px !important; /* Adds professional spacing between text */
+        width: 100% !important;
+        padding: 0px !important;
+        margin: 0px auto !important;
+        list-style: none !important;
+    }
+
+    .nav-links li {
+        margin: 0px !important;
+        display: inline-block !important;
+    }
+
+    /* THE FIX: Styles the link text directly so they are visible */
+    .nav-links li a {
+        font-size: 13px !important;
+        white-space: nowrap !important;
+        display: block !important;
+        padding: 5px 2px !important;
+    }
+
+    /* 2. ROOM CARDS: Stack visual placeholder above text on mobile */
+    .room-card {
+        flex-direction: column !important;
+        width: 100% !important;
+        margin-bottom: 30px !important;
+    }
+
+    .room-visual-box, 
+    .room-image-placeholder, 
+    .room-details {
+        width: 100% !important;
+    }
+
+    .room-visual-box {
+        height: 200px !important; /* Ensures the visual placeholder box doesn't flatten to 0px */
+    }
+
+    /* 3. FIX HOMEPAGE: Stop text leaving out */
+    .hero h1 {
+        font-size: 28px !important;
+    }
+
+    .section-title {
+        font-size: 24px !important;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .prestige-section {
+        padding: 40px 15px !important;
+    }
+
+    /* 4. FIX SCROLL: Kill the side-to-side shake */
+    body, html {
+        overflow-x: hidden !important;
+        width: 100% !important;
+    }
 }
