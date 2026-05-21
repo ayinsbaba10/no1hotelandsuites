@@ -28,7 +28,14 @@
             <p class="subtitle">Experience the pinnacle of luxury in Ile-Ife. Inaugurating August 2026.</p>
 
             <form action="https://formsubmit.co/ayinsbaba91@gmail.com" method="POST" class="booking-form">
-                <input type="hidden" name="_next" value="thanks.html">
+             <!-- 1. CORRECT FIXED REDIRECT (Must be a full live URL or temporary placeholder) -->
+    <input type="hidden" name="_next" value="https://yourdomain.com">
+
+    <!-- 2. AUTOMATIC EMAIL CONFIRMATION SENT TO THE GUEST -->
+    <input type="hidden" name="_autoresponder" value="Thank you for choosing No 1 Royal Hotel & Suites. We have received your reservation inquiry. Our luxury concierge team will confirm your room availability and send your official confirmation receipt within 2 hours.">
+
+    <!-- 3. REMOVES THE UGLY CAPTCHA BOX SCREEN FOR A 5-STAR LUXURY EXPERIENCE -->
+    <input type="hidden" name="_captcha" value="false">   
 
                 <div class="form-group">
                     <label>Full Name</label>
